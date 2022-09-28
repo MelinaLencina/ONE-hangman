@@ -15,41 +15,57 @@ body{
 .dev {
   position: absolute;
   color: black;
-  font-family: monospace;
-  font-weight: 100;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
   left: 60px;
   top: 0px;
 }
 
-.dev a {
+.dev a, .dev a:visited {
   color: #146940;
   text-decoration: none;
 }
 
-.dev a:visited {
-  color: #146940;
+.underline-hover-effect {
+  display: inline-block;
+  padding-bottom: 0.25rem;
+  position: relative;
 }
 
-.dev a:hover,
-.dev a:visited:hover {
-  color: #14694050;
-  font-size: 14px;
+a.underline-hover-effect {
+  text-decoration: none;
+  color: inherit;
 }
 
-.subrayado{
+.underline-hover-effect::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #146940;
+  transition: width 0.45s ease-out;
+}
+
+.underline-hover-effect:hover::before {
+  width: 100%;
+}
+
+.underline{
   display:flex;
 }
-.dibujarLineas{
+.drawLine{
   border-bottom: solid 4px #0A3871;
   width: 30px;
   margin: 10px;
 }
-.esconderLetra{
+.hideLetter{
   display: none;
   font-size: 18px;
 }
 
-.btn-iniciar {
+.btn-start {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -72,8 +88,64 @@ body{
 
   color: #FFFFFF;
 }
+.glow-on-hover {
+    width: 220px;
+    height: auto;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 30px;
+}
 
-.btn-palabra{
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #247815, #319a1f, #40ca30, #95df3a, #c4de68, #e1e440, #40ca30, #319a1f, #247815);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 30px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+.btn-new-word{
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -94,6 +166,10 @@ body{
   justify-content: center;
   color: #146940;
   }
+  .btn-new-word:hover{
+    background-color: darkolivegreen;
+    color: #FFFFFF;
+}
 
   .text-input {
   
@@ -120,23 +196,6 @@ body{
       border: none;
       outline: none;
      }
-.logo{
-  position: absolute;
-  left: 50px;
-  right: 37.43%;
-  top: 50px;
-  bottom: 0%;
-  width: 50px;
-  height:50px;
-}
-.img-alerta{
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
-
-}
  label {
   flex-direction: row;
   position: static;
@@ -166,7 +225,7 @@ body{
   left: 2rem;
   top: 41rem;
  }
-.botones-div{
+.input-buttons{
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -178,7 +237,7 @@ body{
   left: 0;
   top: 43rem;
  }
-.btn-azul {
+.btn-green {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -206,7 +265,12 @@ body{
   justify-content: center; 
 
 }
-.btn-blanco{
+.btn-green:hover{
+    color: #146940;
+      background: #48cb51;
+  border: 1px solid #146940;
+}
+.btn-white{
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -236,12 +300,16 @@ body{
   line-height: 19px;
   justify-content: center;
 }
+.btn-white:hover{
+    background-color: darkolivegreen;
+    color: #FFFFFF;
+}
 .canvas{
   margin-left: 2.5rem;
   width: 1024px;
   height:800px
 }
-.botones-div-canvas{
+.canvas-buttons{
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -253,33 +321,25 @@ body{
   top: 760px;
   margin-bottom: 25px;
  }
- .botones-home{
+ .home-buttons{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   position: absolute;
   left:42rem;
  }
- .palabra-nueva{
+ .add-word{
   position: absolute;
   left: 30rem;
  }
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 481px) and (max-width: 796px) {
-  .logo{
-    left: 40px;
-    right: 37.43%;
-    top: 40px;
-    bottom: 0%;
-    width: 50px;
-    height: 50px;
-  } 
-  .botones-home{
+  .home-buttons{
     top: 16rem;
     left: 12.2rem;
   }
-  .btn-palabra{
+  .btn-new-word{
     width: 270px;
     height: 67px;
     top:7rem;
@@ -287,14 +347,14 @@ body{
     font-size: 22px;
     line-height: 20px;
   }
-  .btn-iniciar{
+  .btn-start{
     width: 289px;
     height: 100px;
     top: 0;
     font-size: 22px;
     line-height: 20px;
   }
-  .btn-azul{
+  .btn-green{
     width: 300px;
     height: 67px;
     left: 31.5%;
@@ -303,7 +363,8 @@ body{
     line-height: 20px;
     margin-bottom: 25px;
   }
-  .btn-blanco{
+  }
+  .btn-white{
     width: 300px;
     height: 67px;
     left: 20px;
@@ -320,7 +381,7 @@ body{
     left: 1.5rem;
     top: 710px;
    }
-   .botones-div{
+   .input-buttons{
     width: 680px;
     height: 57px;
     left: 0.5rem;
@@ -333,26 +394,17 @@ body{
     top: 200px;
     font-size:32px;
      }
-     .img-alerta{
-      left: 1rem;
-      right: 0%;
-      top: 0%;
-      bottom: 0%;   
-    }
     .canvas{
       margin-left: -4rem;
       width: 739px;
       height:800px
     }
-    .botones-div-canvas{
+    .canvas-buttons{
       width: 680px;
       height: 67px;
       left: 9rem;
       top:64rem;
      }
- }
-
-
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
@@ -360,19 +412,11 @@ body{
     min-width: 375px;
     min-height: 667px;
   }
-  .logo{
-    left: 4.27%;
-    right: 87.2%;
-    top: 25px;
-    bottom: 25px;
-    width: 50px;
-    height: 50px;
-  } 
-  .botones-home{
+  .home-buttons{
     top: 16rem;
     left: 4.2rem;
   }
-  .btn-palabra{
+  .btn-new-word{
     width: 200px;
     height: 57px;
     left: 1rem;
@@ -380,7 +424,7 @@ body{
     font-size: 16px;
     line-height: 0px;
   }
-  .btn-iniciar{
+  .btn-start{
   width: 230px;
   height: 90px;
   left: 0;
@@ -388,7 +432,7 @@ body{
   font-size: 18px;
   line-height: 10px;
   }
-  .btn-azul{
+  .btn-green{
     width: 300px;
     height: 57px;
     left: 0;
@@ -396,7 +440,7 @@ body{
     font-size: 18px;
     line-height: 20px;    
   }
-  .btn-blanco{
+  .btn-white{
     width: 300px;
     height: 57px;
     left: 0;
@@ -416,7 +460,7 @@ body{
     left: 16px;
     top: 451px;
    }
-   .botones-div{ 
+   .input-buttons{ 
     flex-wrap: wrap; 
     width: 343px;
     height: 158px;
@@ -431,22 +475,16 @@ body{
     font-size:32px;
     line-height: 150%;
     }
-    .palabra-nueva{
+    .add-word{
       top:0.4rem;
       left: 0.1rem;
-    }
-     .img-alerta{
-      left: 1rem;
-      right: 0%;
-      top: 0%;
-      bottom: 0%;   
     }
     .canvas{
       margin-left: 2.5rem;
       width: 1024px;
       height:800px
     }
-    .botones-div-canvas{
+    .canvas-buttons{
       display: flex;
       flex-direction: row;
       align-items: flex-start;
