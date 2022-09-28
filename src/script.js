@@ -40,6 +40,7 @@ let words = [
   "STICKY",
   "VIEW",
 ];
+
 const table = document.getElementById("hangman").getContext("2d");
 let secretWord = "";
 let letters = [];
