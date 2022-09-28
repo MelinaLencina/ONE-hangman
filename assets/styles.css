@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 body{
-    background: #E5E5E5;
+    background: #b3e59f;
     position: relative;
 }
 
@@ -14,7 +14,7 @@ body{
 
 .dev {
   position: absolute;
-  color: #ababab;
+  color: black;
   font-family: monospace;
   font-weight: 100;
   left: 60px;
@@ -22,114 +22,18 @@ body{
 }
 
 .dev a {
-  color: #8a9bee;
+  color: #146940;
   text-decoration: none;
 }
 
 .dev a:visited {
-  color: #8a9bee;
+  color: #146940;
 }
 
 .dev a:hover,
 .dev a:visited:hover {
-  color: #3d53b3;
+  color: #14694050;
   font-size: 14px;
-}
-
-.home{
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
-}
-
-.home .button{
-position: absolute;
-width: 300px;
-height: 85px;
-left: 22px;
-top: 281px;
-padding: 20px;
-color: #FFFFFF;
-background: #0A3871;
-border-radius: 34px;
-font-family: "Inter";
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 19px;
-}
-
-.home .button:last-child{
-position: absolute;
-width: 260px;
-font-size: 20px;
-height: 67px;
-left: 39px;
-top: 402px;
-color: #0A3871;
-background: #E5E5E5;
-border: 1px solid #0A3871;
-border-radius: 15px;
-}
-
-.submit {
-  display: flex;
-  justify-content: center;
-}
-
-.submit textarea{
-  position: absolute;
-  font-family: "Inter";
-  font-size: 20px;
-  text-align: center;
-  padding: 5px;
-  top: 220px;
-  border: #5c5c5c 1px solid;
-  color: #0a3871;
-  font-family: "Inter";
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 400;
-    box-shadow: 4px 4px 20px -8px rgba(1, 1, 1, 0.3);
-  border-radius: 15px;
-}
-
-.information {
-  color: gray;
-  font-family: "Inter";
-  font-size: 13.5px;
-  font-weight: 200;
-  position: absolute;
-  left: 30px;
-  top: 295px;
-}
-
-.information:last-child{
-    top: 310px;
-}
-
-.submit-buttons {
-  display: flex;
-  justify-content: center;
-}
-
-.button{
-  position: absolute;
-  color: white;
-  background: #0a3871;
-  font-family: "Inter";
-  width: 300px;
-  height: 67px;
-  top: 410px;
-  border-radius: 24px;
-}
-
-.button:last-child {
-  color: #0a3871;
-  background: white;
-  top: 500px;
-  border: 1px solid #0a3871;
 }
 
 .subrayado{
@@ -156,10 +60,8 @@ border-radius: 15px;
   height: 114px;
   left: 0;
   top: 20rem;
-  
-  /* Dark blue/dark-blue-300 */
-  
-  background: #0A3871;
+    
+  background: #146940;
   border-radius: 24px;
   font-style: normal;
   font-weight: 600;
@@ -167,8 +69,6 @@ border-radius: 15px;
   line-height: 22px;
   display: flex;
   justify-content: center;
-
-/* White */
 
   color: #FFFFFF;
 }
@@ -183,7 +83,7 @@ border-radius: 15px;
   height: 67px;
   left: 1.2rem;
   top: 28rem; 
-  border: 1px solid #0A3871;
+  border: 1px solid #146940;
   box-sizing: border-box;
   border-radius: 24px;
   font-style: normal;
@@ -192,11 +92,10 @@ border-radius: 15px;
   line-height: 22px;
   display: flex;
   justify-content: center;
-  color: #0A3871;
+  color: #146940;
   }
 
   .text-input {
-    /* Digite seu texto */
   
     position: absolute;
     width: 600px;
@@ -209,17 +108,13 @@ border-radius: 15px;
     font-size: 32px;
     line-height: 150%;
     justify-content: baseline;
-    /* identical to box height, or 48px */
-   
-  
-    /* Dark blue/dark-blue-300 */
-  
-    color: #0A3871;
+      
+    color: #146940;
     background: transparent;
     border: none;
     text-transform:uppercase;
     }
-  ::placeholder { color: #0A3871; text-transform:lowercase;}
+  ::placeholder { color: #146940; text-transform:lowercase;}
   
   .text-input:focus { 
       border: none;
@@ -255,12 +150,8 @@ border-radius: 15px;
   font-family: Inter;
   font-style: normal;
   font-size:18px;
-  line-height: 100%;
-
-  /* identical to box height, or 18px */
+  line-height: 100%;  
   
-  
-  /* Gray/gray-300 */
   color: #495057;
  }
 .form-group{
@@ -299,7 +190,7 @@ border-radius: 15px;
   left: 0px;
   top: 0px;
 
-  background: #0A3871;
+  background: #146940;
   border-radius: 24px;
 
   flex: none;
@@ -327,23 +218,18 @@ border-radius: 15px;
   left: 352px;
   top: 0px;
 
-  /* Light gray */
-
   background: #D8DFE8;
-  /* Dark blue/dark-blue-300 */
 
-  border: 1px solid #0A3871;
+  border: 1px solid #146940;
   box-sizing: border-box;
   border-radius: 24px;
-
-  /* Inside Auto Layout */
 
   flex: none;
   order: 1;
   flex-grow: 0;
   margin: 0px 24px;
 
-  color: #0A3871;
+  color: #146940;
   font-style: normal;
   font-weight: 600;
   font-size: 22px;
@@ -571,6 +457,6 @@ border-radius: 15px;
       left: 28.5rem;
       top: 760px;
       margin-bottom: 25px;
+      text-shadow: #5c5c5c;
      }
  }
- 

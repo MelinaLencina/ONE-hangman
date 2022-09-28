@@ -2,8 +2,8 @@ function drawCanvas() {
   table.lineWidth = 8;
   table.lineCap = "round";
   table.lineJoin = "round";
-  table.fillStyle = "#F3F5FC";
-  table.strokeStyle = "#0A3871";
+  table.fillStyle = "#b3e59f";
+  table.strokeStyle = "#146940";
   table.fillRect(0, 0, 1200, 800);
   table.beginPath();
   table.moveTo(650, 500);
@@ -16,7 +16,7 @@ function drawLine() {
   table.lineWidth = 6;
   table.lineCap = "round";
   table.lineJoin = "round";
-  table.strokeStyle = "#0A3871";
+  table.strokeStyle = "#146940";
   table.beginPath();
   let w = 600 / secretWord.length;
   for (let i = 0; i < secretWord.length; i++) {
@@ -31,7 +31,7 @@ function writeRightLetter(index) {
   table.lineWidth = 6;
   table.lineCap = "round";
   table.lineJoin = "round";
-  table.fillStyle = "#0A3871";
+  table.fillStyle = "#146940";
   let w = 600 / secretWord.length;
   table.fillText(secretWord[index], 505 + w * index, 620);
   table.stroke();
@@ -42,7 +42,7 @@ function writeWrongLetter(letter, errorsLeft) {
   table.font = "bold 40px Inter";
   table.lineCap = "round";
   table.lineJoin = "round";
-  table.fillStyle = "#0A3871";
+  table.fillStyle = "#146940";
   table.fillText(letter, 535 + 40 * (10 - errorsLeft), 710, 40);
 }
 
@@ -50,7 +50,7 @@ function drawHangman(points) {
   table.lineWidth = 8;
   table.lineCap = "round";
   table.lineJoin = "round";
-  table.strokeStyle = "#0A3871";
+  table.strokeStyle = "#146940";
   if (points === 8) {
     table.moveTo(700, 500);
     table.lineTo(700, 100);
